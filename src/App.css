@@ -1,38 +1,147 @@
-.App {
+:root {
+  --body-bg: rgb(57, 57, 57);
+  --gap: 0.5rem;
+  --grid-gap: var(--gap);
+  --wrapper-width: 60rem;
+  --app-width: var(--wrapper-width);
+}
+
+.wrapper {
+  --bg: #32054e;
+  --fg: rgb(230, 233, 176);
+  --fg-link: lightskyblue;
+  --fg-warning: rgb(245, 60, 60);
+  --fg-warning-hover: rgb(82, 171, 82);
+  --bd: var(--fg);
+}
+
+.app-base {
+  --bg: #0f0f0f;
+  --fg: lightskyblue;
+  --bd: rgb(80, 80, 80);
+  --bg-child: #264653;
+  --fg-close: rgb(233, 14, 58);
+}
+
+body {
+  background: var(--body-bg);
+}
+
+h1, h2, h3 {
+  margin-block: 0.5rem;
+  font-weight: inherit;
+}
+
+h3 {
+  font-size: large;
+  margin-inline: auto;
+}
+
+button {
+  background-color: inherit;
+  color: inherit;
+  border: none;
+  border-color: inherit;
+  border: 1px solid;
+  border-radius: 4px;
+  padding-inline: 1rem;
+}
+
+.wrapper {
+  background-color: var(--bg);
+  color: var(--fg);
+  max-width: var(--wrapper-width);
+  margin-inline: auto;
+  padding-top: 0.5rem;
+}
+
+.wrapper-controls {
+  padding: 0.5rem;
+  width: 100%;
+}
+
+.wrapper-controls button {
+  font-size: large;
+  border: 1px solid var(--bd);
+  opacity: 70%;
+}
+
+.wrapper-controls button:hover {
+  cursor: pointer;
+  opacity: 100%;
+  transition: opacity 0.1s;
+}
+
+.wrapper .warning {
+  color: var(--fg-warning);
   text-align: center;
+  font-size: x-large;
+  padding-bottom: 1rem;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.wrapper .warning button {
+  opacity: 70%;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.wrapper .warning button:hover {
+  color: var(--fg-warning-hover);
+  cursor: pointer;
+  opacity: 100%;
+  transition: opacity 0.2s;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.close-button {
+  font-size: x-large;
+  color: var(--fg-close);
+  padding-inline: 0;
+  border: none;
+  opacity: 70%;
+  position: absolute;
+  top: 0.25rem;
+  right: 0.5rem;
 }
 
-.App-link {
-  color: #61dafb;
+.close-button:hover {
+  cursor: pointer;
+  opacity: 100%;
+  transition: opacity 0.1s;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.app-base {
+  display: grid;
+  gap: var(--grid-gap);
+  position: relative;
+  background: var(--bg);
+
+  width: var(--app-width);
+  margin-inline: auto;
+  color: var(--fg);
 }
+
+.app-container {
+  height: 42rem;
+
+  margin: 0.5rem;
+  padding: 0.25rem;
+}
+
+.grid {
+  --bg: #030732;
+  --fg: rgb(247, 253, 188);
+  --bd: white;
+  --bg-child: #264653;
+}
+
+.grid {
+  background-color: var(--bg);
+  color: var(--fg);
+}
+
+.box {
+  width: 6rem;
+  height: 4rem;
+  background-color: var(--bg-child);
+  border: 1px solid var(--bd);
+}
+
+@media (prefers-reduced-motion: no-preference) {}
