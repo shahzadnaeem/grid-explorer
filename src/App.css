@@ -6,17 +6,8 @@
   --app-width: var(--wrapper-width);
 }
 
-.wrapper {
-  --bg: #32054e;
-  --fg: rgb(230, 233, 176);
-  --fg-link: lightskyblue;
-  --fg-warning: rgb(245, 60, 60);
-  --fg-warning-hover: rgb(82, 171, 82);
-  --bd: var(--fg);
-}
-
 .app-base {
-  --bg: #0f0f0f;
+  --bg: #1b1f8d;
   --fg: lightskyblue;
   --bd: rgb(80, 80, 80);
   --bg-child: #264653;
@@ -30,11 +21,19 @@ body {
 h1, h2, h3 {
   margin-block: 0.5rem;
   font-weight: inherit;
+  margin-inline: auto;
+}
+
+h1 {
+  font-size: xx-large;
+}
+
+h2 {
+  font-size: x-large;
 }
 
 h3 {
   font-size: large;
-  margin-inline: auto;
 }
 
 button {
@@ -45,66 +44,6 @@ button {
   border: 1px solid;
   border-radius: 4px;
   padding-inline: 1rem;
-}
-
-.wrapper {
-  background-color: var(--bg);
-  color: var(--fg);
-  max-width: var(--wrapper-width);
-  margin-inline: auto;
-  padding-top: 0.5rem;
-}
-
-.wrapper-controls {
-  padding: 0.5rem;
-  width: 100%;
-}
-
-.wrapper-controls button {
-  font-size: large;
-  border: 1px solid var(--bd);
-  opacity: 70%;
-}
-
-.wrapper-controls button:hover {
-  cursor: pointer;
-  opacity: 100%;
-  transition: opacity 0.1s;
-}
-
-.wrapper .warning {
-  color: var(--fg-warning);
-  text-align: center;
-  font-size: x-large;
-  padding-bottom: 1rem;
-}
-
-.wrapper .warning button {
-  opacity: 70%;
-}
-
-.wrapper .warning button:hover {
-  color: var(--fg-warning-hover);
-  cursor: pointer;
-  opacity: 100%;
-  transition: opacity 0.2s;
-}
-
-.close-button {
-  font-size: x-large;
-  color: var(--fg-close);
-  padding-inline: 0;
-  border: none;
-  opacity: 70%;
-  position: absolute;
-  top: 0.25rem;
-  right: 0.5rem;
-}
-
-.close-button:hover {
-  cursor: pointer;
-  opacity: 100%;
-  transition: opacity 0.1s;
 }
 
 .app-base {
@@ -125,23 +64,5 @@ button {
   padding: 0.25rem;
 }
 
-.grid {
-  --bg: #030732;
-  --fg: rgb(247, 253, 188);
-  --bd: white;
-  --bg-child: #264653;
-}
-
-.grid {
-  background-color: var(--bg);
-  color: var(--fg);
-}
-
-.box {
-  width: 6rem;
-  height: 4rem;
-  background-color: var(--bg-child);
-  border: 1px solid var(--bd);
-}
 
 @media (prefers-reduced-motion: no-preference) {}

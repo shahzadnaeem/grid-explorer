@@ -1,0 +1,68 @@
+.wrapper {
+  --bg: #32054e;
+  --fg: rgb(230, 233, 176);
+  --fg-link: lightskyblue;
+  --fg-warning: rgb(245, 60, 60);
+  --fg-warning-hover: rgb(82, 171, 82);
+  --bd: var(--fg);
+}
+
+.wrapper {
+  background-color: var(--bg);
+  color: var(--fg);
+  max-width: var(--wrapper-width);
+  margin-inline: auto;
+  padding-top: 0.5rem;
+}
+
+.wrapper-controls {
+  padding: 0.5rem;
+  width: 100%;
+}
+
+.wrapper-controls button {
+  font-size: large;
+  border: 1px solid var(--bd);
+  opacity: 70%;
+}
+
+.wrapper-controls button:hover {
+  cursor: pointer;
+  opacity: 100%;
+  transition: opacity 0.1s;
+}
+
+.wrapper .warning {
+  color: var(--fg-warning);
+  text-align: center;
+  font-size: x-large;
+  padding-bottom: 1rem;
+}
+
+.wrapper .warning button {
+  opacity: 70%;
+}
+
+.wrapper .warning button:hover {
+  color: var(--fg-warning-hover);
+  cursor: pointer;
+  opacity: 100%;
+  transition: opacity 0.2s;
+}
+
+.close-button {
+  font-size: x-large;
+  color: var(--fg-close);
+  padding-inline: 0;
+  border: none;
+  opacity: 70%;
+  position: absolute;
+  top: 0.25rem;
+  right: 0.5rem;
+}
+
+.close-button:hover {
+  cursor: pointer;
+  opacity: 100%;
+  transition: opacity 0.1s;
+}
