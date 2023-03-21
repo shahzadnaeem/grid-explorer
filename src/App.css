@@ -3,7 +3,6 @@
   --gap: 0.5rem;
   --grid-gap: var(--gap);
   --wrapper-width: 60rem;
-  --app-width: var(--wrapper-width);
 }
 
 .app-base {
@@ -21,7 +20,7 @@ body {
 h1, h2, h3 {
   margin-block: 0.5rem;
   font-weight: inherit;
-  margin-inline: auto;
+  text-align: center;
 }
 
 h1 {
@@ -52,8 +51,7 @@ button {
   position: relative;
   background: var(--bg);
 
-  width: var(--app-width);
-  margin-inline: auto;
+  max-width: 100%;
   color: var(--fg);
 }
 

@@ -17,7 +17,6 @@ export default function Wrapper(props) {
 
   const toggleDebug = () => {
     setDebug((d) => {
-      console.log(`setDebug: ${d} => ${!d}`);
       return !d;
     });
   };

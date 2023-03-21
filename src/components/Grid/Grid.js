@@ -1,21 +1,120 @@
+import { useId, useCallback, useEffect, useState } from "react";
+
 import "./Grid.css";
 
 function Box(props) {
-  return <div className="box pad1">{props.children}</div>;
+  return (
+    <div className={"box pad1" + (props.xtra === true ? " xtra" : "")}>
+      {props.children}
+    </div>
+  );
 }
 
-export default function Grid(props) {
-  const boxes = new Array(props.numBoxes).fill(0);
-  const xtraBoxes = new Array(props.numXtraBoxes).fill(0);
+function Radio({ options, uid, onChange }) {
+  const [selected, setSelected] = useState(options.values[0]);
 
-  const boxContent = (i) => "Text ".repeat((i % 6) + 1);
+  const handleChange = (ev) => {
+    setSelected(ev.target.value);
+  };
+
+  useEffect(() => {
+    onChange(options.key, selected);
+  }, [selected, options.key, onChange]);
 
   return (
-    <div className="Grid grid-1col pad4">
+    <fieldset className="grid-fieldset-c">
+      <legend>{options.name}</legend>
+
+      {options.values.map((o) => {
+        const optId = `${uid}-${options.key}-${o}`;
+
+        return (
+          <div key={optId}>
+            <input
+              type="radio"
+              id={optId}
+              name={optId}
+              value={o}
+              checked={selected === o}
+              onChange={handleChange}
+            />
+            <label htmlFor={optId}>{o}</label>
+          </div>
+        );
+      })}
+    </fieldset>
+  );
+}
+
+const JustifyContent = {
+  name: "Justify Content",
+  key: `jc`,
+  values: ["def", "beg", "cen", "end"],
+};
+
+const JustifyItems = {
+  name: "Justify Items",
+  key: `ji`,
+  values: ["def", "beg", "cen", "end"],
+};
+
+const AlignContent = {
+  name: "Align Content",
+  key: `ac`,
+  values: ["def", "beg", "cen", "end"],
+};
+
+const AlignItems = {
+  name: "Align Items",
+  key: `ai`,
+  values: ["def", "beg", "cen", "end"],
+};
+
+export default function Grid(props) {
+  const uid = useId();
+  const [options, setOptions] = useState({});
+
+  const boxes = new Array(props.numBoxes).fill(0);
+  const xtraBoxes = new Array(props.numXtraBoxes ?? 0).fill(0);
+
+  const boxContent = (i) => "Text ...".repeat((i % 3) + 1);
+
+  const onChange = useCallback((k, v) => {
+    setOptions((opts) => {
+      opts[k] = v;
+      return { ...opts };
+    });
+  }, []);
+
+  const selectedOptions = Object.keys(options)
+    .map((k) => `${k}-${options[k]}`)
+    .join(" ");
+
+  return (
+    <div className="Grid pad4">
       <h2>
         Boxes: {props.numBoxes}, Shape: {props.shape}, Extra: {props.xtra}
       </h2>
-      <div className={`${props.shape} ${props.xtra}`}>
+      <div className="grid-1col mb4">
+        <div className="grid-2cols">
+          <Radio options={JustifyContent} uid={uid} onChange={onChange} />
+          <Radio options={JustifyItems} uid={uid} onChange={onChange} />
+          <Radio options={AlignContent} uid={uid} onChange={onChange} />
+          <Radio options={AlignItems} uid={uid} onChange={onChange} />
+        </div>
+        <fieldset className="grid-fieldset-c">
+          <div>Selected options: </div>
+          {Object.keys(options).map((k) => {
+            return (
+              <div key={k} className="option">
+                {k}-{options[k]}
+              </div>
+            );
+          })}
+        </fieldset>
+      </div>
+
+      <div className={`${props.shape} ${selectedOptions}`}>
         {boxes.map((b, i) => (
           <Box key={i + 1}>
             {`Box ${i + 1}`}
@@ -25,7 +124,7 @@ export default function Grid(props) {
         ))}
 
         {xtraBoxes.map((b, i) => (
-          <Box key={i + 1}>{`Xtra Box ${i + 1}`}</Box>
+          <Box key={i + 1} xtra={true}>{`Xtra Box ${i + 1}`}</Box>
         ))}
       </div>
     </div>
