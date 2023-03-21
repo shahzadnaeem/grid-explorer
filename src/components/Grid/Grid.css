@@ -96,46 +96,8 @@
 
 /* -------------------------------------------------------------------- */
 
-.ji-def {
-    justify-items: normal;
-}
-
-.ji-beg {
-    justify-items: start;
-}
-
-.ji-cen {
-    justify-items: center;
-}
-
-.ji-end {
-    justify-items: end;
-}
-
-.ji-str {
-    justify-items: stretch;
-}
-
-.ai-beg {
-    align-items: start;
-}
-
-.ai-cen {
-    align-items: center;
-}
-
-.ai-end {
-    align-items: end;
-}
-
-.ai-str {
-    align-items: stretch;
-}
-
-/* -------------------------------------------------------------------- */
-
 .jc-def {
-    justify-content: normal;
+    /* justify-content: normal; */
 }
 
 .jc-beg {
@@ -150,20 +112,28 @@
     justify-content: end;
 }
 
-.jc-str {
-    justify-content: stretch;
+/*  */
+
+.ji-def {
+    /* justify-items: normal; */
 }
 
-.jc-spca {
-    justify-content: space-around;
+.ji-beg {
+    justify-items: start;
 }
 
-.jc-spcb {
-    justify-content: space-between;
+.ji-cen {
+    justify-items: center;
 }
 
-.jc-spce {
-    justify-content: space-evenly;
+.ji-end {
+    justify-items: end;
+}
+
+/* -------------------------------------------------------------------- */
+
+.ac-def {
+    /* align-content: normal; */
 }
 
 .ac-beg {
@@ -178,20 +148,58 @@
     align-content: end;
 }
 
-.ac-str {
-    align-content: stretch;
+/*  */
+
+.ai-def {
+    /* align-items: normal; */
 }
 
-.ac-spca {
-    align-content: space-around;
+.ai-beg {
+    align-items: start;
 }
 
-.ac-spcb {
-    align-content: space-between;
+.ai-cen {
+    align-items: center;
 }
 
-.ac-spce {
-    align-content: space-evenly;
+.ai-end {
+    align-items: end;
+}
+
+/* -------------------------------------------------------------------- */
+
+.pc-def {
+    /* place-content: normal; */
+}
+
+.pc-beg {
+    place-content: start;
+}
+
+.pc-cen {
+    place-content: center center;
+}
+
+.pc-end {
+    place-content: end;
+}
+
+/*  */
+
+.pi-def {
+    /* place-items: normal; */
+}
+
+.pi-beg {
+    place-items: start;
+}
+
+.pi-cen {
+    place-items: center;
+}
+
+.pi-end {
+    place-items: end;
 }
 
 /* -------------------------------------------------------------------- */

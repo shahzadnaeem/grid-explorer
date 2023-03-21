@@ -70,6 +70,18 @@ const AlignItems = {
   values: ["def", "beg", "cen", "end"],
 };
 
+const PlaceContent = {
+  name: "Place Content",
+  key: `pc`,
+  values: ["def", "beg", "cen", "end"],
+};
+
+const PlaceItems = {
+  name: "Place Items",
+  key: `pi`,
+  values: ["def", "beg", "cen", "end"],
+};
+
 export default function Grid(props) {
   const uid = useId();
   const [options, setOptions] = useState({});
@@ -101,6 +113,8 @@ export default function Grid(props) {
           <Radio options={JustifyItems} uid={uid} onChange={onChange} />
           <Radio options={AlignContent} uid={uid} onChange={onChange} />
           <Radio options={AlignItems} uid={uid} onChange={onChange} />
+          <Radio options={PlaceContent} uid={uid} onChange={onChange} />
+          <Radio options={PlaceItems} uid={uid} onChange={onChange} />
         </div>
         <fieldset className="grid-fieldset-c">
           <div>Selected options: </div>
