@@ -1,101 +1,16 @@
-import { useId, useCallback, useEffect, useState } from "react";
+import { useCallback, useState } from "react";
+
+import Box from "./Box";
+import GridOptions from "./GridOptions";
 
 import "./Grid.css";
 
-function Box(props) {
-  return (
-    <div className={"box pad1" + (props.xtra === true ? " xtra" : "")}>
-      {props.children}
-    </div>
-  );
-}
+const toAry = (n) => (n ? Array(n).fill(0) : []);
 
-function Radio({ options, uid, onChange }) {
-  const [selected, setSelected] = useState(options.values[0]);
-
-  const handleChange = (ev) => {
-    setSelected(ev.target.value);
-  };
-
-  useEffect(() => {
-    onChange(options.key, selected);
-  }, [selected, options.key, onChange]);
-
-  return (
-    <fieldset className={"grid-fieldset-c " + options.class}>
-      <legend>{options.name}</legend>
-
-      {options.values.map((o) => {
-        const optId = `${uid}-${options.key}-${o}`;
-
-        return (
-          <div key={optId}>
-            <input
-              type="radio"
-              id={optId}
-              name={optId}
-              value={o}
-              checked={selected === o}
-              onChange={handleChange}
-            />
-            <label htmlFor={optId}>{o}</label>
-          </div>
-        );
-      })}
-    </fieldset>
-  );
-}
-
-const JustifyContent = {
-  name: "Justify Content",
-  class: "content-css",
-  key: `jc`,
-  values: ["def", "beg", "cen", "end"],
-};
-
-const AlignContent = {
-  name: "Align Content",
-  class: "content-css",
-  key: `ac`,
-  values: ["def", "beg", "cen", "end"],
-};
-
-const PlaceContent = {
-  name: "Place Content (Justify + Align)",
-  class: "content-css",
-  key: `pc`,
-  values: ["def", "beg", "cen", "end"],
-};
-
-const JustifyItems = {
-  name: "Justify Items",
-  class: "items-css",
-  key: `ji`,
-  values: ["def", "beg", "cen", "end"],
-};
-
-const AlignItems = {
-  name: "Align Items",
-  class: "items-css",
-  key: `ai`,
-  values: ["def", "beg", "cen", "end"],
-};
-
-const PlaceItems = {
-  name: "Place Items (Justify + Align)",
-  class: "items-css",
-  key: `pi`,
-  values: ["def", "beg", "cen", "end"],
-};
-
-export default function Grid(props) {
-  const uid = useId();
+export default function Grid({ shape, boxes, xtraBoxes, showSelectedOptions }) {
   const [options, setOptions] = useState({});
 
-  const boxes = new Array(props.numBoxes).fill(0);
-  const xtraBoxes = new Array(props.numXtraBoxes ?? 0).fill(0);
-
-  const boxContent = (i) => "Text ...".repeat((i % 5) + 1);
+  const boxContent = (i) => "Text text ... ".repeat(i % 6);
 
   const onChange = useCallback((k, v) => {
     setOptions((opts) => {
@@ -112,35 +27,17 @@ export default function Grid(props) {
   return (
     <div className="Grid pad4">
       <h2>
-        Boxes: {props.numBoxes}, Shape: {props.shape}, Extra: {props.xtra}
+        Shape: {shape}, Boxes: {boxes}, Extra Boxes: {xtraBoxes}
       </h2>
-      <div className="grid-1col mb4">
-        <div className="grid-2cols">
-          <div>
-            <Radio options={JustifyContent} uid={uid} onChange={onChange} />
-            <Radio options={AlignContent} uid={uid} onChange={onChange} />
-            <Radio options={PlaceContent} uid={uid} onChange={onChange} />
-          </div>
-          <div>
-            <Radio options={JustifyItems} uid={uid} onChange={onChange} />
-            <Radio options={AlignItems} uid={uid} onChange={onChange} />
-            <Radio options={PlaceItems} uid={uid} onChange={onChange} />
-          </div>
-        </div>
-        <fieldset className="grid-fieldset-c">
-          <div>Selected options:</div>
-          {selectedOptions.split(" ").map((k) => {
-            return (
-              <div key={k} className="option">
-                {k}
-              </div>
-            );
-          })}
-        </fieldset>
-      </div>
 
-      <div className={`${props.shape} ${selectedOptions}`}>
-        {boxes.map((b, i) => (
+      <GridOptions
+        selectedOptions={selectedOptions}
+        showSelectedOptions={true}
+        onChange={onChange}
+      />
+
+      <div className={`${shape} ${selectedOptions}`}>
+        {toAry(boxes).map((b, i) => (
           <Box key={i + 1}>
             {`Box ${i + 1}`}
             <br />
@@ -148,7 +45,7 @@ export default function Grid(props) {
           </Box>
         ))}
 
-        {xtraBoxes.map((b, i) => (
+        {toAry(xtraBoxes).map((b, i) => (
           <Box key={i + 1} xtra={true}>{`Xtra Box ${i + 1}`}</Box>
         ))}
       </div>

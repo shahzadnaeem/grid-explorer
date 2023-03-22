@@ -4,6 +4,7 @@
     --bd: white;
     --bg-content-css: rgb(16, 55, 16);
     --bg-items-css: rgb(77, 11, 11);
+    --bg-selected-options: rgb(75, 73, 60);
     --bg-child: #264653;
     --bg-child-xtra: firebrick;
 }
@@ -71,8 +72,6 @@
 .grid-6c4r {
     display: grid;
     grid: repeat(4, minmax(4rem, min-content)) / repeat(6, minmax(6rem, min-content));
-    /* grid-template-columns: repeat(6, 1fr);
-    grid-template-rows: repeat(4, 1fr); */
     gap: var(--grid-gap);
 }
 
@@ -104,11 +103,12 @@
     background-color: var(--bg-items-css);
 }
 
-/* -------------------------------------------------------------------- */
-
-.jc-def {
-    /* justify-content: normal; */
+.selected-options {
+    background-color: var(--bg-selected-options);
+    color: var(--fg-selected-options);
 }
+
+/* -------------------------------------------------------------------- */
 
 .jc-beg {
     justify-content: start;
@@ -124,10 +124,6 @@
 
 /*  */
 
-.ji-def {
-    /* justify-items: normal; */
-}
-
 .ji-beg {
     justify-items: start;
 }
@@ -141,10 +137,6 @@
 }
 
 /* -------------------------------------------------------------------- */
-
-.ac-def {
-    /* align-content: normal; */
-}
 
 .ac-beg {
     align-content: start;
@@ -160,10 +152,6 @@
 
 /*  */
 
-.ai-def {
-    /* align-items: normal; */
-}
-
 .ai-beg {
     align-items: start;
 }
@@ -178,10 +166,6 @@
 
 /* -------------------------------------------------------------------- */
 
-.pc-def {
-    /* place-content: normal; */
-}
-
 .pc-beg {
     place-content: start;
 }
@@ -195,10 +179,6 @@
 }
 
 /*  */
-
-.pi-def {
-    /* place-items: normal; */
-}
 
 .pi-beg {
     place-items: start;

@@ -9,18 +9,15 @@ import Grid from "./components/Grid/Grid";
 
 function App() {
   const grids = [
-    { shape: "grid-8cols", xtra: "", numBoxes: 10 },
-    { shape: "grid-8cols", xtra: "ji-cen", numBoxes: 10 },
-    { shape: "grid-4cols", xtra: "ji-cen", numBoxes: 3 },
+    { shape: "grid-8cols", boxes: 10, xtraBoxes: 4 },
+    { shape: "grid-4cols", boxes: 3, xtraBoxes: 3 },
 
-    { shape: "grid-6c4r", xtra: "ji-cen", numBoxes: 4 },
-    { shape: "grid-auto-c", xtra: "ji-cen jc-cen", numBoxes: 15 },
-    { shape: "grid-6c4r", xtra: "jc-cen", numBoxes: 22, numXtraBoxes: 10 },
+    { shape: "grid-6c4r", boxes: 4 },
+    { shape: "grid-auto-c", boxes: 15 },
+    { shape: "grid-6c4r", boxes: 22, xtraBoxes: 10 },
 
-    { shape: "grid-4rows", xtra: "", numBoxes: 2 },
-    { shape: "grid-4rows", xtra: "jc-beg", numBoxes: 4 },
-    { shape: "grid-4rows", xtra: "jc-cen", numBoxes: 4 },
-    { shape: "grid-4rows", xtra: "jc-end", numBoxes: 4 },
+    { shape: "grid-4rows", boxes: 2 },
+    { shape: "grid-4rows", boxes: 2, xtraBoxes: 2 },
   ];
 
   return (
