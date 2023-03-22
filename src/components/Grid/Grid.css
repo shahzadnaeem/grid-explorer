@@ -2,6 +2,8 @@
     --bg: #030732;
     --fg: rgb(247, 253, 188);
     --bd: white;
+    --bg-content-css: rgb(16, 55, 16);
+    --bg-items-css: rgb(77, 11, 11);
     --bg-child: #264653;
     --bg-child-xtra: firebrick;
 }
@@ -92,6 +94,14 @@
     grid-auto-flow: column;
     gap: var(--grid-gap);
     margin-right: 0.5rem;
+}
+
+.content-css {
+    background-color: var(--bg-content-css);
+}
+
+.items-css {
+    background-color: var(--bg-items-css);
 }
 
 /* -------------------------------------------------------------------- */

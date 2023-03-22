@@ -22,7 +22,7 @@ function Radio({ options, uid, onChange }) {
   }, [selected, options.key, onChange]);
 
   return (
-    <fieldset className="grid-fieldset-c">
+    <fieldset className={"grid-fieldset-c " + options.class}>
       <legend>{options.name}</legend>
 
       {options.values.map((o) => {
@@ -48,36 +48,42 @@ function Radio({ options, uid, onChange }) {
 
 const JustifyContent = {
   name: "Justify Content",
+  class: "content-css",
   key: `jc`,
-  values: ["def", "beg", "cen", "end"],
-};
-
-const JustifyItems = {
-  name: "Justify Items",
-  key: `ji`,
   values: ["def", "beg", "cen", "end"],
 };
 
 const AlignContent = {
   name: "Align Content",
+  class: "content-css",
   key: `ac`,
+  values: ["def", "beg", "cen", "end"],
+};
+
+const PlaceContent = {
+  name: "Place Content (Justify + Align)",
+  class: "content-css",
+  key: `pc`,
+  values: ["def", "beg", "cen", "end"],
+};
+
+const JustifyItems = {
+  name: "Justify Items",
+  class: "items-css",
+  key: `ji`,
   values: ["def", "beg", "cen", "end"],
 };
 
 const AlignItems = {
   name: "Align Items",
+  class: "items-css",
   key: `ai`,
   values: ["def", "beg", "cen", "end"],
 };
 
-const PlaceContent = {
-  name: "Place Content",
-  key: `pc`,
-  values: ["def", "beg", "cen", "end"],
-};
-
 const PlaceItems = {
-  name: "Place Items",
+  name: "Place Items (Justify + Align)",
+  class: "items-css",
   key: `pi`,
   values: ["def", "beg", "cen", "end"],
 };
@@ -89,7 +95,7 @@ export default function Grid(props) {
   const boxes = new Array(props.numBoxes).fill(0);
   const xtraBoxes = new Array(props.numXtraBoxes ?? 0).fill(0);
 
-  const boxContent = (i) => "Text ...".repeat((i % 3) + 1);
+  const boxContent = (i) => "Text ...".repeat((i % 5) + 1);
 
   const onChange = useCallback((k, v) => {
     setOptions((opts) => {
@@ -99,6 +105,7 @@ export default function Grid(props) {
   }, []);
 
   const selectedOptions = Object.keys(options)
+    .filter((k) => options[k] !== "def")
     .map((k) => `${k}-${options[k]}`)
     .join(" ");
 
@@ -109,19 +116,23 @@ export default function Grid(props) {
       </h2>
       <div className="grid-1col mb4">
         <div className="grid-2cols">
-          <Radio options={JustifyContent} uid={uid} onChange={onChange} />
-          <Radio options={JustifyItems} uid={uid} onChange={onChange} />
-          <Radio options={AlignContent} uid={uid} onChange={onChange} />
-          <Radio options={AlignItems} uid={uid} onChange={onChange} />
-          <Radio options={PlaceContent} uid={uid} onChange={onChange} />
-          <Radio options={PlaceItems} uid={uid} onChange={onChange} />
+          <div>
+            <Radio options={JustifyContent} uid={uid} onChange={onChange} />
+            <Radio options={AlignContent} uid={uid} onChange={onChange} />
+            <Radio options={PlaceContent} uid={uid} onChange={onChange} />
+          </div>
+          <div>
+            <Radio options={JustifyItems} uid={uid} onChange={onChange} />
+            <Radio options={AlignItems} uid={uid} onChange={onChange} />
+            <Radio options={PlaceItems} uid={uid} onChange={onChange} />
+          </div>
         </div>
         <fieldset className="grid-fieldset-c">
-          <div>Selected options: </div>
-          {Object.keys(options).map((k) => {
+          <div>Selected options:</div>
+          {selectedOptions.split(" ").map((k) => {
             return (
               <div key={k} className="option">
-                {k}-{options[k]}
+                {k}
               </div>
             );
           })}
