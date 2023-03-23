@@ -2,17 +2,22 @@
     --bg: #030732;
     --fg: rgb(247, 253, 188);
     --bd: white;
+    --bg-grid-bounds: rgb(103, 103, 103);
     --bg-content-css: rgb(16, 55, 16);
     --bg-items-css: rgb(77, 11, 11);
     --bg-selected-options: rgb(75, 73, 60);
-    --bg-child: #264653;
-    --bg-child-xtra: firebrick;
+    --bg-child: #304f5f;
+    --bg-child-xtra: rgb(120, 52, 52);
 }
 
 .Grid {
     background-color: var(--bg);
     color: var(--fg);
     display: grid;
+}
+
+.Grid>div:last-child {
+    background-color: var(--bg-grid-bounds);
 }
 
 .grid-demo {

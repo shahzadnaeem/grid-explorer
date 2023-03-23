@@ -17,7 +17,6 @@ function App() {
     { shape: "grid-auto-c", boxes: 5, xtraBoxes: 2 },
     { shape: "grid-6c4r", boxes: 11, xtraBoxes: 10 },
 
-    // { shape: "grid-4rows", boxes: 2 },
     { shape: "grid-4rows", boxes: 2, xtraBoxes: 1 },
   ];
 
