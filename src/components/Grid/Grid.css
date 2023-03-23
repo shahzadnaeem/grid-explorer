@@ -189,6 +189,10 @@ div.grid-fieldset-item {
     align-content: end;
 }
 
+.ac-str {
+    align-content: stretch;
+}
+
 .ac-spc-ar {
     align-content: space-around;
 }
@@ -213,6 +217,10 @@ div.grid-fieldset-item {
 
 .ai-end {
     align-items: end;
+}
+
+.ai-str {
+    align-items: stretch;
 }
 
 /* -------------------------------------------------------------------- */

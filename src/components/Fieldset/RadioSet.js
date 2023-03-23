@@ -3,6 +3,8 @@ import { useEffect, useState } from "react";
 export default function RadioSet({ options, uid, onChange }) {
   const [selected, setSelected] = useState(options.values[0]);
 
+  const INVISIBLE = "-";
+
   const handleChange = (ev) => {
     setSelected(ev.target.value);
   };
@@ -20,15 +22,22 @@ export default function RadioSet({ options, uid, onChange }) {
 
         return (
           <div className="grid-fieldset-item" key={optId}>
-            <input
-              type="radio"
-              id={optId}
-              name={optId}
-              value={o}
-              checked={selected === o}
-              onChange={handleChange}
-            />
-            <label htmlFor={optId}>{o}</label>
+            {o !== INVISIBLE ? (
+              <>
+                <input
+                  type="radio"
+                  id={optId}
+                  name={optId}
+                  value={o}
+                  checked={selected === o}
+                  onChange={handleChange}
+                />
+                <label htmlFor={optId}>{o}</label>
+              </>
+            ) : (
+              // Invisible space for alignment hack!
+              <span>&#8203;</span>
+            )}
           </div>
         );
       })}

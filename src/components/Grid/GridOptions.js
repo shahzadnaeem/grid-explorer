@@ -13,7 +13,7 @@ const AlignContent = {
   name: "Align Content",
   class: "content-css",
   key: `ac`,
-  values: ["def", "beg", "cen", "end", "spc-ar", "spc-bt", "spc-ev"],
+  values: ["def", "beg", "cen", "end", "str", "spc-ar", "spc-bt", "spc-ev"],
 };
 
 const PlaceContent = {
@@ -34,7 +34,7 @@ const AlignItems = {
   name: "Align Items",
   class: "items-css",
   key: `ai`,
-  values: ["def", "beg", "cen", "end"],
+  values: ["def", "beg", "cen", "end", "str"],
 };
 
 const PlaceItems = {
