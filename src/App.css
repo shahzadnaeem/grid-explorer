@@ -50,8 +50,6 @@ button {
   gap: var(--grid-gap);
   position: relative;
   background: var(--bg);
-
-  max-width: 100%;
   color: var(--fg);
 }
 

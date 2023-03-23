@@ -19,7 +19,7 @@ export default function RadioSet({ options, uid, onChange }) {
         const optId = `${uid}-${options.key}-${o}`;
 
         return (
-          <div key={optId}>
+          <div className="grid-fieldset-item" key={optId}>
             <input
               type="radio"
               id={optId}

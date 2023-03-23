@@ -6,14 +6,14 @@ const JustifyContent = {
   name: "Justify Content",
   class: "content-css",
   key: `jc`,
-  values: ["def", "beg", "cen", "end"],
+  values: ["def", "beg", "cen", "end", "spc-ar", "spc-bt", "spc-ev"],
 };
 
 const AlignContent = {
   name: "Align Content",
   class: "content-css",
   key: `ac`,
-  values: ["def", "beg", "cen", "end"],
+  values: ["def", "beg", "cen", "end", "spc-ar", "spc-bt", "spc-ev"],
 };
 
 const PlaceContent = {
@@ -27,7 +27,7 @@ const JustifyItems = {
   name: "Justify Items",
   class: "items-css",
   key: `ji`,
-  values: ["def", "beg", "cen", "end"],
+  values: ["def", "beg", "cen", "end", "left", "right"],
 };
 
 const AlignItems = {
@@ -67,7 +67,7 @@ export default function GridOptions({
       </div>
 
       {showSelectedOptions && (
-        <fieldset className="grid-fieldset-c selected-options">
+        <div className="selected-options">
           <div>Selected options:</div>
           {selectedOptions &&
             selectedOptions.split(" ").map((k) => {
@@ -77,7 +77,7 @@ export default function GridOptions({
                 </div>
               );
             })}
-        </fieldset>
+        </div>
       )}
     </div>
   );
