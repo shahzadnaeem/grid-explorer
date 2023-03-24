@@ -44,6 +44,27 @@ const PlaceItems = {
   values: ["def", "beg", "cen", "end"],
 };
 
+const Gap = {
+  name: "Gap",
+  class: "gap-css",
+  key: `gap`,
+  values: ["def", "0", "sm", "md", "lg", "xl"],
+};
+
+const Height = {
+  name: "Height (Container)",
+  class: "height-css",
+  key: `ht`,
+  values: ["def", "sm", "md", "lg", "xl"],
+};
+
+const Flex = {
+  name: "Flex",
+  class: "flex-css",
+  key: `flx`,
+  values: ["def", "wrap"],
+};
+
 export default function GridOptions({
   selectedOptions,
   showSelectedOptions,
@@ -64,6 +85,13 @@ export default function GridOptions({
           <RadioSet options={AlignItems} uid={uid} onChange={onChange} />
           <RadioSet options={PlaceItems} uid={uid} onChange={onChange} />
         </div>
+      </div>
+      <div className="grid-2cols">
+        <RadioSet options={Gap} uid={uid} onChange={onChange} />
+        <RadioSet options={Height} uid={uid} onChange={onChange} />
+      </div>
+      <div className="grid-2cols">
+        <RadioSet options={Flex} uid={uid} onChange={onChange} />
       </div>
 
       {showSelectedOptions && (

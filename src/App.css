@@ -45,7 +45,6 @@ button {
 
 .app-base {
   display: grid;
-  gap: var(--grid-gap);
   position: relative;
   background: var(--bg);
   color: var(--fg);
@@ -59,7 +58,7 @@ button {
 }
 
 .app-controls {
-  padding: 0.5rem;
+  padding-bottom: 1.0rem;
 }
 
 .app-controls select {
@@ -67,7 +66,6 @@ button {
   color: var(--fg);
   font-size: x-large;
   border: 1px solid var(--bd-select);
-  margin-top: var(--grid-gap);
   padding-inline: 1rem;
 }
 

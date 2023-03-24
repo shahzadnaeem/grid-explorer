@@ -39,6 +39,22 @@ const grids = {
       name: "4 Row Grid",
       settings: { shape: "grid-4rows", boxes: 2, xtraBoxes: 1 },
     },
+    {
+      name: "Flex Row",
+      settings: { shape: "flex-row", boxes: 2, xtraBoxes: 6 },
+    },
+    {
+      name: "Flex Col",
+      settings: { shape: "flex-col", boxes: 3, xtraBoxes: 6 },
+    },
+    {
+      name: "Flex Row Reverse",
+      settings: { shape: "flex-row-rev", boxes: 8, xtraBoxes: 3 },
+    },
+    {
+      name: "Flex Col Reverse",
+      settings: { shape: "flex-col-rev", boxes: 5, xtraBoxes: 3 },
+    },
   ],
 };
 
@@ -56,6 +72,7 @@ function App() {
   return (
     <Wrapper>
       <main className="app-base">
+        <h1>Grid and Flexbox Explorer</h1>
         <AppControls options={grids} setSelected={setSelected} />
 
         {selected && <Grid {...selected.settings} />}

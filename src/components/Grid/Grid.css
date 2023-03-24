@@ -5,6 +5,9 @@
     --bg-grid-bounds: rgb(103, 103, 103);
     --bg-content-css: rgb(16, 55, 16);
     --bg-items-css: rgb(77, 11, 11);
+    --bg-gap-css: rgb(73, 11, 77);
+    --bg-height-css: rgb(68, 76, 77);
+    --bg-flex-css: rgb(43, 100, 122);
     --bg-selected-options: rgb(75, 73, 60);
     --bg-child: #304f5f;
     --bg-child-xtra: rgb(120, 52, 52);
@@ -20,12 +23,13 @@
     background-color: var(--bg-grid-bounds);
 }
 
+/* ----------------------------------------- */
+
 .grid-demo {
     display: grid;
     grid-template-columns: repeat(5, 8rem);
     grid-auto-rows: min-content;
     gap: var(--gap);
-    height: 16rem;
 }
 
 .grid-cols {
@@ -107,12 +111,50 @@ div.grid-fieldset-item {
     margin-right: 0.5rem;
 }
 
+.flex-row {
+    display: flex;
+    flex-direction: row;
+    gap: var(--grid-gap);
+}
+
+.flex-row-rev {
+    display: flex;
+    flex-direction: row-reverse;
+    gap: var(--grid-gap);
+}
+
+.flex-col {
+    display: flex;
+    flex-direction: column;
+    gap: var(--grid-gap);
+    overflow-y: auto;
+}
+
+.flex-col-rev {
+    display: flex;
+    flex-direction: column-reverse;
+    gap: var(--grid-gap);
+    overflow-y: auto;
+}
+
 .content-css {
     background-color: var(--bg-content-css);
 }
 
 .items-css {
     background-color: var(--bg-items-css);
+}
+
+.gap-css {
+    background-color: var(--bg-gap-css);
+}
+
+.height-css {
+    background-color: var(--bg-height-css);
+}
+
+.flex-css {
+    background-color: var(--bg-flex-css);
 }
 
 .selected-options {
@@ -127,7 +169,7 @@ div.grid-fieldset-item {
     padding: 0.5rem;
 }
 
-/* -------------------------------------------------------------------- */
+/* ----------------------------------------- */
 
 .jc-beg {
     justify-content: start;
@@ -175,7 +217,7 @@ div.grid-fieldset-item {
     justify-items: right;
 }
 
-/* -------------------------------------------------------------------- */
+/* ----------------------------------------- */
 
 .ac-beg {
     align-content: start;
@@ -223,7 +265,7 @@ div.grid-fieldset-item {
     align-items: stretch;
 }
 
-/* -------------------------------------------------------------------- */
+/* ----------------------------------------- */
 
 .pc-beg {
     place-content: start;
@@ -251,7 +293,53 @@ div.grid-fieldset-item {
     place-items: end;
 }
 
-/* -------------------------------------------------------------------- */
+/* ----------------------------------------- */
+
+.gap-0 {
+    gap: 0;
+}
+
+.gap-sm {
+    gap: 0.25rem;
+}
+
+.gap-md {
+    gap: 0.5rem;
+}
+
+.gap-lg {
+    gap: 1.0rem;
+}
+
+.gap-xl {
+    gap: 2.0rem;
+}
+
+/* ----------------------------------------- */
+
+.ht-sm {
+    height: 12rem;
+}
+
+.ht-md {
+    height: 16rem;
+}
+
+.ht-lg {
+    height: 20rem;
+}
+
+.ht-xl {
+    height: 32rem;
+}
+
+/* ----------------------------------------- */
+
+.flx-wrap {
+    flex-wrap: wrap;
+}
+
+/* ----------------------------------------- */
 
 .box {
     background-color: var(--bg-child);
@@ -261,3 +349,5 @@ div.grid-fieldset-item {
 .xtra {
     background-color: var(--bg-child-xtra);
 }
+
+/* ----------------------------------------- */
