@@ -19,3 +19,7 @@ You can find the grid definitions in two places:
 - [x] Add missing grid options - still a few more to add
 - [x] Support flexbox
 - [x] Allow picking of just one layout from a drop down for a simpler UI
+
+## Screenshot
+
+<img src="screenshot.png">

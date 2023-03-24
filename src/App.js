@@ -19,12 +19,12 @@ const grids = {
     },
 
     {
-      name: "4 Col Grid",
+      name: "4 Cols Grid",
       settings: { shape: "grid-4cols", boxes: 3, xtraBoxes: 3 },
     },
 
     {
-      name: "6 Row x 4 Col Grid",
+      name: "6 Cols x 4 Rows Grid",
       settings: { shape: "grid-6c4r", boxes: 4 },
     },
     {
@@ -32,11 +32,11 @@ const grids = {
       settings: { shape: "grid-auto-c", boxes: 5, xtraBoxes: 2 },
     },
     {
-      name: "6 Row x 4 Col Grid - Many boxes",
+      name: "6 Cols x 4 Rows Grid - Many boxes",
       settings: { shape: "grid-6c4r", boxes: 11, xtraBoxes: 10 },
     },
     {
-      name: "4 Row Grid",
+      name: "4 Rows Grid",
       settings: { shape: "grid-4rows", boxes: 2, xtraBoxes: 1 },
     },
     {
