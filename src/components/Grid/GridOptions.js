@@ -13,7 +13,7 @@ const AlignContent = {
   name: "Align Content",
   class: "content-css",
   key: `ac`,
-  values: ["def", "beg", "cen", "end", "str", "spc-ar", "spc-bt", "spc-ev"],
+  values: ["def", "beg", "cen", "end", "spc-ar", "spc-bt", "spc-ev", "str"],
 };
 
 const PlaceContent = {
@@ -66,6 +66,7 @@ const Flex = {
 };
 
 export default function GridOptions({
+  shape,
   selectedOptions,
   showSelectedOptions,
   onChange,
@@ -90,22 +91,29 @@ export default function GridOptions({
         <RadioSet options={Gap} uid={uid} onChange={onChange} />
         <RadioSet options={Height} uid={uid} onChange={onChange} />
       </div>
-      <div className="grid-2cols">
-        <RadioSet options={Flex} uid={uid} onChange={onChange} />
-      </div>
+      {shape.includes("flex") && (
+        <div className="grid-2cols">
+          <RadioSet options={Flex} uid={uid} onChange={onChange} />
+        </div>
+      )}
 
       {showSelectedOptions && (
-        <div className="selected-options">
-          <div>Selected options:</div>
-          {selectedOptions &&
-            selectedOptions.split(" ").map((k) => {
-              return (
-                <div key={k} className="option">
-                  {k}
-                </div>
-              );
-            })}
-        </div>
+        <>
+          <div className="selected-options">
+            <div>Selected options:</div>
+            {selectedOptions &&
+              selectedOptions.split(" ").map((k) => {
+                return (
+                  <div key={k} className="option">
+                    {k}
+                  </div>
+                );
+              })}
+          </div>
+          {/* <div className="details">
+            <div>Details:</div>
+          </div> */}
+        </>
       )}
     </div>
   );

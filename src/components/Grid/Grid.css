@@ -9,6 +9,8 @@
     --bg-height-css: rgb(68, 76, 77);
     --bg-flex-css: rgb(43, 100, 122);
     --bg-selected-options: rgb(75, 73, 60);
+    --bg-details: rgb(187, 177, 111);
+    --fg-details: #00031c;
     --bg-child: #304f5f;
     --bg-child-xtra: rgb(120, 52, 52);
 }
@@ -159,13 +161,19 @@ div.grid-fieldset-item {
 
 .selected-options {
     background-color: var(--bg-selected-options);
-    color: var(--fg-selected-options);
     border: 1px solid var(--bd);
     display: grid;
     grid-auto-flow: column;
     grid-template-rows: auto;
     gap: var(--grid-gap);
     justify-content: left;
+    padding: 0.5rem;
+}
+
+.details {
+    background-color: var(--bg-details);
+    color: var(--fg-details);
+    border: 1px solid var(--bd);
     padding: 0.5rem;
 }
 

@@ -31,6 +31,7 @@ export default function Grid({ shape, boxes, xtraBoxes, showSelectedOptions }) {
       </h2>
 
       <GridOptions
+        shape={shape}
         selectedOptions={selectedOptions}
         showSelectedOptions={true}
         onChange={onChange}

@@ -11,7 +11,7 @@ import Select from "./components/Select/Select";
 import Wrapper from "./components/Wrapper/Wrapper";
 
 const grids = {
-  title: "Select Grid",
+  title: "Select a Layout",
   options: [
     {
       name: "Demo Grid",

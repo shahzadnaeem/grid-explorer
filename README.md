@@ -22,4 +22,4 @@ You can find the grid definitions in two places:
 
 ## Screenshot
 
-<img src="screenshot.png">
+![Screenshot](./screenshot.png)
