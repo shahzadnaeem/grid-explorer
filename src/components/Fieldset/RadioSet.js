@@ -23,7 +23,7 @@ export default function RadioSet({ options, uid, onChange }) {
         return (
           <div className="grid-fieldset-item" key={optId}>
             {o !== INVISIBLE ? (
-              <>
+              <label htmlFor={optId}>
                 <input
                   type="radio"
                   id={optId}
@@ -32,8 +32,8 @@ export default function RadioSet({ options, uid, onChange }) {
                   checked={selected === o}
                   onChange={handleChange}
                 />
-                <label htmlFor={optId}>{o}</label>
-              </>
+                {o}
+              </label>
             ) : (
               // Invisible space for alignment hack!
               <span>&#8203;</span>

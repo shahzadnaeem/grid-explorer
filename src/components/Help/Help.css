@@ -1,0 +1,19 @@
+.Help {
+    --bg: #1d1d1d;
+    --fg: rgb(222, 222, 222);
+    --bd: var(--fg);
+}
+
+.Help {
+    color: var(--fg);
+    background-color: var(--bg) !important;
+    border: 1px solid var(--bd);
+    padding: 0.5rem;
+    font-size: large;
+}
+
+.Help>p>span {
+    padding-left: 1rem;
+    font-family: var(--df-fonts-mono);
+    font-weight: bold;
+}

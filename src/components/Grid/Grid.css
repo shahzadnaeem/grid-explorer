@@ -6,7 +6,7 @@
     --bg-content-css: rgb(16, 55, 16);
     --bg-items-css: rgb(77, 11, 11);
     --bg-gap-css: rgb(73, 11, 77);
-    --bg-height-css: rgb(68, 76, 77);
+    --bg-height-css: var(--bg-grid-bounds);
     --bg-flex-css: rgb(43, 100, 122);
     --bg-selected-options: rgb(75, 73, 60);
     --bg-details: rgb(187, 177, 111);
@@ -106,7 +106,7 @@
     grid-template-columns: repeat(4, 1fr);
 }
 
-div.grid-fieldset-item {
+div.grid-fieldset-item>label {
     display: grid;
     grid-template-columns: auto 1fr;
     gap: var(--grid-gap);

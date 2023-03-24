@@ -14,15 +14,17 @@ const grids = {
   title: "Select a Layout",
   options: [
     {
+      name: "Help",
+      settings: { shape: "help", boxes: 0, xtraBoxes: 0 },
+    },
+    {
       name: "Demo Grid",
       settings: { shape: "grid-demo", boxes: 4, xtraBoxes: 2 },
     },
-
     {
       name: "4 Cols Grid",
       settings: { shape: "grid-4cols", boxes: 3, xtraBoxes: 3 },
     },
-
     {
       name: "6 Cols x 4 Rows Grid",
       settings: { shape: "grid-6c4r", boxes: 4 },

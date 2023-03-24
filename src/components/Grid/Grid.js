@@ -2,6 +2,7 @@ import { useCallback, useState } from "react";
 
 import Box from "./Box";
 import GridOptions from "./GridOptions";
+import Help from "../Help/Help";
 
 import "./Grid.css";
 
@@ -24,11 +25,15 @@ export default function Grid({ shape, boxes, xtraBoxes, showSelectedOptions }) {
     .map((k) => `${k}-${options[k]}`)
     .join(" ");
 
+  const showHelp = shape === "help";
+
   return (
     <div className="Grid pad4">
-      <h2>
-        Shape: {shape}, Boxes: {boxes}, Extra Boxes: {xtraBoxes}
-      </h2>
+      {!showHelp && (
+        <h2>
+          Shape: {shape}, Boxes: {boxes}, Extra Boxes: {xtraBoxes}
+        </h2>
+      )}
 
       <GridOptions
         shape={shape}
@@ -37,19 +42,23 @@ export default function Grid({ shape, boxes, xtraBoxes, showSelectedOptions }) {
         onChange={onChange}
       />
 
-      <div className={`${shape} ${selectedOptions}`}>
-        {toAry(boxes).map((b, i) => (
-          <Box key={i + 1}>
-            {`Box ${i + 1}`}
-            <br />
-            {`${boxContent(i)}`}
-          </Box>
-        ))}
+      {showHelp ? (
+        <Help />
+      ) : (
+        <div className={`${shape} ${selectedOptions}`}>
+          {toAry(boxes).map((b, i) => (
+            <Box key={i + 1}>
+              {`Box ${i + 1}`}
+              <br />
+              {`${boxContent(i)}`}
+            </Box>
+          ))}
 
-        {toAry(xtraBoxes).map((b, i) => (
-          <Box key={i + 1} xtra={true}>{`Xtra Box ${i + 1}`}</Box>
-        ))}
-      </div>
+          {toAry(xtraBoxes).map((b, i) => (
+            <Box key={i + 1} xtra={true}>{`Xtra Box ${i + 1}`}</Box>
+          ))}
+        </div>
+      )}
     </div>
   );
 }
