@@ -7,10 +7,14 @@ A React app to play around with CSS grid and it's options
 - npm install
 - npm start
 
-The app displays a number of CSS grids that you can find definitions for in `src/Components/Grid/Grid.css`. You can then play with the  grid options that have been added so far to see their effect.
+The app displays one of a number of CSS grids. You can then play with the available grid options to see their effect.
+
+You can find the grid definitions in two places:
+- Available selections - `src/App.js`
+- Definitions - `src/Components/Grid/Grid.css`.
 
 ## TODO
 
-- Add missing grid options
-- Support grid and flexbox
-- Allow picking of just one layout (or maybe 2, side by side) from a drop down for a simpler UI
+- [x] Add missing grid options - still a few more to add
+- [ ] Support flexbox
+- [x] Allow picking of just one layout from a drop down for a simpler UI

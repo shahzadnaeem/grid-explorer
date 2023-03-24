@@ -8,9 +8,7 @@
 .app-base {
   --bg: #1b1f8d;
   --fg: lightskyblue;
-  --bd: rgb(80, 80, 80);
-  --bg-child: #264653;
-  --fg-close: rgb(233, 14, 58);
+  --bd-select: rgb(117, 123, 161);
 }
 
 body {
@@ -60,5 +58,17 @@ button {
   padding: 0.25rem;
 }
 
+.app-controls {
+  padding: 0.5rem;
+}
+
+.app-controls select {
+  background-color: var(--bg);
+  color: var(--fg);
+  font-size: x-large;
+  border: 1px solid var(--bd-select);
+  margin-top: var(--grid-gap);
+  padding-inline: 1rem;
+}
 
 @media (prefers-reduced-motion: no-preference) {}
