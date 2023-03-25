@@ -24,3 +24,7 @@ You can find the grid definitions in two places:
 ## Screenshot
 
 ![Screenshot](./screenshot.png)
+
+## Help
+
+![Help](./help.png)
