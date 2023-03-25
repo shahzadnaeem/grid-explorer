@@ -64,15 +64,15 @@ export default function Grid({ shape, boxes, xtraBoxes, showSelectedOptions }) {
       ) : (
         <>
           <div className="grid-controls grid-cols just-left mb4">
-            <label className="grid-cols">
+            <div className="grid-cols">
               Box
               <button onClick={() => handleBoxUpdate(setNumBoxes, 1)}>+</button>
               <button onClick={() => handleBoxUpdate(setNumBoxes, -1)}>
                 -
               </button>
-            </label>
+            </div>
 
-            <label className="grid-cols">
+            <div className="grid-cols">
               Xtra Box
               <button onClick={() => handleBoxUpdate(setNumXtraBoxes, 1)}>
                 +
@@ -80,7 +80,7 @@ export default function Grid({ shape, boxes, xtraBoxes, showSelectedOptions }) {
               <button onClick={() => handleBoxUpdate(setNumXtraBoxes, -1)}>
                 -
               </button>
-            </label>
+            </div>
           </div>
 
           <div className={`layout ${shape} ${selectedOptions}`}>

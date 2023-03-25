@@ -57,6 +57,7 @@ textarea {
     font-size: 100%;
     line-height: var(--df-line-height);
     margin: var(--df-margin);
+    padding: var(--df-padding);
 }
 
 a, button {

@@ -33,11 +33,11 @@
     border: 1px solid var(--bd);
 }
 
-.grid-controls label {
+.grid-controls * {
     align-items: center;
 }
 
-.grid-controls label+label {
+.grid-controls *+* {
     border-left: 1px solid var(--bd-sep);
     padding-left: 0.25rem;
 }
@@ -47,6 +47,7 @@
     background-color: var(--bg);
     border: 1px solid var(--bd);
     opacity: 70%;
+    padding-inline: 0.5rem;
 }
 
 .grid-controls button:hover {
