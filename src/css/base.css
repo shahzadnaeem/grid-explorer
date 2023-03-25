@@ -7,6 +7,10 @@
     font-family: var(--df-fonts-mono);
 }
 
+.just-left {
+    justify-content: left;
+}
+
 .just-middle {
     justify-content: center;
 }

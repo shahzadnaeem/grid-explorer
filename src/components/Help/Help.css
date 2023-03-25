@@ -6,7 +6,7 @@
 
 .Help {
     color: var(--fg);
-    background-color: var(--bg) !important;
+    background-color: var(--bg);
     border: 1px solid var(--bd);
     padding: 0.5rem;
     font-size: large;
@@ -16,4 +16,8 @@
     padding-left: 1rem;
     font-family: var(--df-fonts-mono);
     font-weight: bold;
+}
+
+.Help>hr {
+    margin-block: 0.5rem;
 }

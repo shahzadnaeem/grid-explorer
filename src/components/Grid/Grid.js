@@ -1,4 +1,4 @@
-import { useCallback, useState } from "react";
+import { useCallback, useState, useEffect } from "react";
 
 import Box from "./Box";
 import GridOptions from "./GridOptions";
@@ -10,6 +10,13 @@ const toAry = (n) => (n ? Array(n).fill(0) : []);
 
 export default function Grid({ shape, boxes, xtraBoxes, showSelectedOptions }) {
   const [options, setOptions] = useState({});
+  const [numBoxes, setNumBoxes] = useState(0);
+  const [numXtraBoxes, setNumXtraBoxes] = useState(0);
+
+  useEffect(() => {
+    setNumBoxes(boxes);
+    setNumXtraBoxes(xtraBoxes);
+  }, [shape, boxes, xtraBoxes]);
 
   const boxContent = (i) => "Text text ... ".repeat(i % 6);
 
@@ -19,6 +26,16 @@ export default function Grid({ shape, boxes, xtraBoxes, showSelectedOptions }) {
       return { ...opts };
     });
   }, []);
+
+  const handleBoxUpdate = (setter, delta) => {
+    setter((p) => {
+      if (p > 0 || delta > 0) {
+        return p + delta;
+      } else {
+        return 0;
+      }
+    });
+  };
 
   const selectedOptions = Object.keys(options)
     .filter((k) => options[k] !== "def")
@@ -45,19 +62,41 @@ export default function Grid({ shape, boxes, xtraBoxes, showSelectedOptions }) {
       {showHelp ? (
         <Help />
       ) : (
-        <div className={`${shape} ${selectedOptions}`}>
-          {toAry(boxes).map((b, i) => (
-            <Box key={i + 1}>
-              {`Box ${i + 1}`}
-              <br />
-              {`${boxContent(i)}`}
-            </Box>
-          ))}
+        <>
+          <div className="grid-controls grid-cols just-left mb4">
+            <label className="grid-cols">
+              Box
+              <button onClick={() => handleBoxUpdate(setNumBoxes, 1)}>+</button>
+              <button onClick={() => handleBoxUpdate(setNumBoxes, -1)}>
+                -
+              </button>
+            </label>
 
-          {toAry(xtraBoxes).map((b, i) => (
-            <Box key={i + 1} xtra={true}>{`Xtra Box ${i + 1}`}</Box>
-          ))}
-        </div>
+            <label className="grid-cols">
+              Xtra Box
+              <button onClick={() => handleBoxUpdate(setNumXtraBoxes, 1)}>
+                +
+              </button>
+              <button onClick={() => handleBoxUpdate(setNumXtraBoxes, -1)}>
+                -
+              </button>
+            </label>
+          </div>
+
+          <div className={`layout ${shape} ${selectedOptions}`}>
+            {toAry(numBoxes).map((b, i) => (
+              <Box key={i + 1}>
+                {`Box ${i + 1}`}
+                <br />
+                {`${boxContent(i)}`}
+              </Box>
+            ))}
+
+            {toAry(numXtraBoxes).map((b, i) => (
+              <Box key={i + 1} xtra={true}>{`Xtra Box ${i + 1}`}</Box>
+            ))}
+          </div>
+        </>
       )}
     </div>
   );

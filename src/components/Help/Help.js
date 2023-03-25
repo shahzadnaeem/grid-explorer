@@ -15,7 +15,7 @@ export default function Help() {
         option - you will likely need to adjust the <i>Height</i> so that
         wrapping is required
       </p>
-      <p></p>
+      <hr />
       <p>You can also add your own Layouts and Options</p>
       <p>
         <span>src/App.js</span> is where the Layouts are defined

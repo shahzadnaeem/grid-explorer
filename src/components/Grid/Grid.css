@@ -2,6 +2,8 @@
     --bg: #030732;
     --fg: rgb(247, 253, 188);
     --bd: white;
+    --bd-sep: rgb(82, 82, 82);
+    --bg-controls: var(--bg);
     --bg-grid-bounds: rgb(103, 103, 103);
     --bg-content-css: rgb(16, 55, 16);
     --bg-items-css: rgb(77, 11, 11);
@@ -21,8 +23,36 @@
     display: grid;
 }
 
-.Grid>div:last-child {
+.Grid .layout {
     background-color: var(--bg-grid-bounds);
+}
+
+.grid-controls {
+    background-color: var(--bg-controls);
+    padding: 0.5rem;
+    border: 1px solid var(--bd);
+}
+
+.grid-controls label {
+    align-items: center;
+}
+
+.grid-controls label+label {
+    border-left: 1px solid var(--bd-sep);
+    padding-left: 0.25rem;
+}
+
+
+.grid-controls button {
+    background-color: var(--bg);
+    border: 1px solid var(--bd);
+    opacity: 70%;
+}
+
+.grid-controls button:hover {
+    cursor: pointer;
+    opacity: 100%;
+    transition: opacity 0.1s;
 }
 
 /* ----------------------------------------- */
