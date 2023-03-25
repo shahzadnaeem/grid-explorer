@@ -12,12 +12,17 @@
     font-size: large;
 }
 
-.Help>p>span {
+.Help ul {
+    list-style: square;
+    padding-left: 1.5rem;
+}
+
+.Help p>span {
     padding-left: 1rem;
     font-family: var(--df-fonts-mono);
     font-weight: bold;
 }
 
-.Help>hr {
+.Help hr {
     margin-block: 0.5rem;
 }
