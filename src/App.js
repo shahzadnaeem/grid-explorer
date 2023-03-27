@@ -42,20 +42,20 @@ const grids = {
       settings: { shape: "grid-4rows", boxes: 2, xtraBoxes: 1 },
     },
     {
-      name: "Flex Row",
+      name: "Flex Row (Cols)",
       settings: { shape: "flex-row", boxes: 2, xtraBoxes: 6 },
     },
     {
-      name: "Flex Col",
+      name: "Flex Col (Rows)",
       settings: { shape: "flex-col", boxes: 3, xtraBoxes: 6 },
     },
     {
-      name: "Flex Row Reverse",
-      settings: { shape: "flex-row-rev", boxes: 8, xtraBoxes: 3 },
+      name: "Flex Row (Cols) Reverse",
+      settings: { shape: "flex-row-rev", boxes: 2, xtraBoxes: 6 },
     },
     {
-      name: "Flex Col Reverse",
-      settings: { shape: "flex-col-rev", boxes: 5, xtraBoxes: 3 },
+      name: "Flex Col (Rows) Reverse",
+      settings: { shape: "flex-col-rev", boxes: 3, xtraBoxes: 6 },
     },
   ],
 };

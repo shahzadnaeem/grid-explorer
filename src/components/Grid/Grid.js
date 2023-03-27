@@ -49,6 +49,7 @@ export default function Grid({ shape, boxes, xtraBoxes, showSelectedOptions }) {
   useEffect(() => {
     setNumBoxes(boxes);
     setNumXtraBoxes(xtraBoxes);
+    setNumJauntyBoxes(0);
   }, [shape, boxes, xtraBoxes, notification]);
 
   const onChange = useCallback((k, v) => {

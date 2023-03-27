@@ -74,6 +74,10 @@ const Flex = {
 
 const FLEX_SHAPE_PREFIX = "flex";
 
+const isFlexShape = (shape) => {
+  return shape && shape.includes(FLEX_SHAPE_PREFIX);
+};
+
 export default function GridOptions({
   shape,
   selectedOptions,
@@ -81,21 +85,13 @@ export default function GridOptions({
   onChange,
   resetNotification,
 }) {
-  const isFlexShape = () => {
-    return shape && shape.includes(FLEX_SHAPE_PREFIX);
-  };
-
-  const clearFlexSettingIfRequired = () => {
-    if (!isFlexShape()) {
-      onChange(Flex.key, Flex.values[0]);
-    }
-  };
-
   const uid = useId();
 
   useEffect(() => {
-    clearFlexSettingIfRequired();
-  }, [shape]);
+    if (!isFlexShape(shape)) {
+      onChange(Flex.key, Flex.values[0]);
+    }
+  }, [shape, onChange]);
 
   return (
     <div className="grid-1col mb4">
@@ -164,7 +160,7 @@ export default function GridOptions({
           resetNotification={resetNotification}
         />
 
-        {isFlexShape() && (
+        {isFlexShape(shape) && (
           <RadioSet
             options={Flex}
             uid={uid}
