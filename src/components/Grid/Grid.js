@@ -6,7 +6,12 @@ import Help from "../Help/Help";
 
 import "./Grid.css";
 
-const toAry = (n) => (n ? Array(n).fill(0) : []);
+const toAry = (n) =>
+  n
+    ? Array(n)
+        .fill(1)
+        .map((x, y) => x + y)
+    : [];
 
 const useNotify = () => {
   const [notification, setNotification] = useState({});
@@ -17,6 +22,21 @@ const useNotify = () => {
 
   return [notification, notify];
 };
+
+const MAX_BOX_TEXT = 3;
+
+function BoxContent({ num }) {
+  const rows = toAry((num % MAX_BOX_TEXT) + 1);
+
+  return (
+    <>
+      {`Box ${num + 1}`}
+      {rows.map((i) => {
+        return <p key={i}>{"Text text ... ".repeat(i)}</p>;
+      })}
+    </>
+  );
+}
 
 export default function Grid({ shape, boxes, xtraBoxes, showSelectedOptions }) {
   const [options, setOptions] = useState({});
@@ -30,8 +50,6 @@ export default function Grid({ shape, boxes, xtraBoxes, showSelectedOptions }) {
     setNumBoxes(boxes);
     setNumXtraBoxes(xtraBoxes);
   }, [shape, boxes, xtraBoxes, notification]);
-
-  const boxContent = (i) => "Text text ... ".repeat(i % 6);
 
   const onChange = useCallback((k, v) => {
     setOptions((opts) => {
@@ -115,19 +133,17 @@ export default function Grid({ shape, boxes, xtraBoxes, showSelectedOptions }) {
           </div>
 
           <div className={`layout ${shape} ${selectedOptions}`}>
-            {toAry(numBoxes).map((b, i) => (
+            {toAry(numBoxes).map((_, i) => (
               <Box key={i + 1}>
-                {`Box ${i + 1}`}
-                <br />
-                {`${boxContent(i)}`}
+                <BoxContent num={i}></BoxContent>
               </Box>
             ))}
 
-            {toAry(numXtraBoxes).map((b, i) => (
+            {toAry(numXtraBoxes).map((_, i) => (
               <Box key={i + 1} xtra={true}>{`Xtra Box ${i + 1}`}</Box>
             ))}
 
-            {toAry(numJauntyBoxes).map((b, i) => (
+            {toAry(numJauntyBoxes).map((_, i) => (
               <Box key={i + 1} jaunty={true}>{`Jaunty Box ${i + 1}`}</Box>
             ))}
           </div>

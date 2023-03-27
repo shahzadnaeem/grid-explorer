@@ -1,4 +1,4 @@
-import { useId } from "react";
+import { useEffect, useId } from "react";
 
 import RadioSet from "../Fieldset/RadioSet";
 
@@ -72,6 +72,8 @@ const Flex = {
   values: ["def", "wrap"],
 };
 
+const FLEX_SHAPE_PREFIX = "flex";
+
 export default function GridOptions({
   shape,
   selectedOptions,
@@ -79,7 +81,21 @@ export default function GridOptions({
   onChange,
   resetNotification,
 }) {
+  const isFlexShape = () => {
+    return shape && shape.includes(FLEX_SHAPE_PREFIX);
+  };
+
+  const clearFlexSettingIfRequired = () => {
+    if (!isFlexShape()) {
+      onChange(Flex.key, Flex.values[0]);
+    }
+  };
+
   const uid = useId();
+
+  useEffect(() => {
+    clearFlexSettingIfRequired();
+  }, [shape]);
 
   return (
     <div className="grid-1col mb4">
@@ -148,7 +164,7 @@ export default function GridOptions({
           resetNotification={resetNotification}
         />
 
-        {shape.includes("flex") && (
+        {isFlexShape() && (
           <RadioSet
             options={Flex}
             uid={uid}
