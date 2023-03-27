@@ -9,12 +9,14 @@
     --bg-items-css: rgb(77, 11, 11);
     --bg-gap-css: rgb(73, 11, 77);
     --bg-height-css: var(--bg-grid-bounds);
+    --bg-overflow-css: var(--bg-grid-bounds);
     --bg-flex-css: rgb(43, 100, 122);
     --bg-selected-options: rgb(75, 73, 60);
     --bg-details: rgb(187, 177, 111);
     --fg-details: #00031c;
     --bg-child: #304f5f;
     --bg-child-xtra: rgb(120, 52, 52);
+    --bg-child-jaunty: greenyellow;
 }
 
 .Grid {
@@ -186,6 +188,10 @@ div.grid-fieldset-item>label {
     background-color: var(--bg-height-css);
 }
 
+.overflow-css {
+    background-color: var(--bg-overflow-css);
+}
+
 .flex-css {
     background-color: var(--bg-flex-css);
 }
@@ -338,6 +344,14 @@ div.grid-fieldset-item>label {
     gap: 0;
 }
 
+.gap-x-0 {
+    column-gap: 0;
+}
+
+.gap-y-0 {
+    row-gap: 0;
+}
+
 .gap-sm {
     gap: 0.25rem;
 }
@@ -351,7 +365,15 @@ div.grid-fieldset-item>label {
 }
 
 .gap-xl {
-    gap: 2.0rem;
+    gap: 3.0rem;
+}
+
+.gap-x-xl {
+    column-gap: 3.0rem;
+}
+
+.gap-y-xl {
+    row-gap: 3.0rem;
 }
 
 /* ----------------------------------------- */
@@ -372,10 +394,41 @@ div.grid-fieldset-item>label {
     height: 32rem;
 }
 
+.ht-min-xl {
+    min-height: 32rem;
+}
+
 /* ----------------------------------------- */
 
 .flx-wrap {
     flex-wrap: wrap;
+}
+
+/* ----------------------------------------- */
+
+.ov-auto {
+    overflow: auto;
+}
+
+.ov-hide {
+    overflow: hidden;
+}
+
+
+.ov-y-auto {
+    overflow-y: auto;
+}
+
+.ov-y-hide {
+    overflow-y: hidden;
+}
+
+.ov-x-auto {
+    overflow-x: auto;
+}
+
+.ov-x-hide {
+    overflow-x: hidden;
 }
 
 /* ----------------------------------------- */
@@ -387,6 +440,24 @@ div.grid-fieldset-item>label {
 
 .xtra {
     background-color: var(--bg-child-xtra);
+}
+
+.jaunty {
+    --fg: black;
+    --bd: var(--fg);
+    --mg: 2rem;
+    --ht: 5rem;
+    --wd: 5rem;
+}
+
+.jaunty {
+    background-color: var(--bg-child-jaunty);
+    color: var(--fg);
+    border: 4px solid var(--bd);
+    margin: var(--mg);
+    height: var(--ht);
+    width: var(--wd);
+    transform: rotate(30deg);
 }
 
 /* ----------------------------------------- */

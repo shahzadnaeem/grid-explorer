@@ -1,7 +1,9 @@
-export default function Box(props) {
+export default function Box({ xtra, jaunty, children }) {
   return (
-    <div className={"box pad1" + (props.xtra === true ? " xtra" : "")}>
-      {props.children}
+    <div
+      className={"box pad1" + (xtra ? " xtra" : "") + (jaunty ? " jaunty" : "")}
+    >
+      {children}
     </div>
   );
 }

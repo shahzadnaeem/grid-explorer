@@ -22,13 +22,14 @@ export default function Grid({ shape, boxes, xtraBoxes, showSelectedOptions }) {
   const [options, setOptions] = useState({});
   const [numBoxes, setNumBoxes] = useState(0);
   const [numXtraBoxes, setNumXtraBoxes] = useState(0);
+  const [numJauntyBoxes, setNumJauntyBoxes] = useState(0);
 
   const [notification, notify] = useNotify();
 
   useEffect(() => {
     setNumBoxes(boxes);
     setNumXtraBoxes(xtraBoxes);
-  }, [shape, boxes, xtraBoxes]);
+  }, [shape, boxes, xtraBoxes, notification]);
 
   const boxContent = (i) => "Text text ... ".repeat(i % 6);
 
@@ -101,6 +102,16 @@ export default function Grid({ shape, boxes, xtraBoxes, showSelectedOptions }) {
                 -
               </button>
             </div>
+
+            <div className="grid-cols">
+              Jaunty Boxes
+              <button onClick={() => handleBoxUpdate(setNumJauntyBoxes, 1)}>
+                +
+              </button>
+              <button onClick={() => handleBoxUpdate(setNumJauntyBoxes, -1)}>
+                -
+              </button>
+            </div>
           </div>
 
           <div className={`layout ${shape} ${selectedOptions}`}>
@@ -114,6 +125,10 @@ export default function Grid({ shape, boxes, xtraBoxes, showSelectedOptions }) {
 
             {toAry(numXtraBoxes).map((b, i) => (
               <Box key={i + 1} xtra={true}>{`Xtra Box ${i + 1}`}</Box>
+            ))}
+
+            {toAry(numJauntyBoxes).map((b, i) => (
+              <Box key={i + 1} jaunty={true}>{`Jaunty Box ${i + 1}`}</Box>
             ))}
           </div>
         </>

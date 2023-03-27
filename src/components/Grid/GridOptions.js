@@ -1,4 +1,4 @@
-import { useEffect, useId } from "react";
+import { useId } from "react";
 
 import RadioSet from "../Fieldset/RadioSet";
 
@@ -44,18 +44,25 @@ const PlaceItems = {
   values: ["def", "beg", "cen", "end"],
 };
 
-const Gap = {
-  name: "Gap",
-  class: "gap-css",
-  key: `gap`,
-  values: ["def", "0", "sm", "md", "lg", "xl"],
-};
-
 const Height = {
   name: "Height (Container)",
   class: "height-css",
   key: `ht`,
-  values: ["def", "sm", "md", "lg", "xl"],
+  values: ["def", "sm", "md", "lg", "xl", "min-xl"],
+};
+
+const Overflow = {
+  name: "Overflow",
+  class: "overflow-css",
+  key: `ov`,
+  values: ["def", "auto", "hide", "y-auto", "y-hide", "x-auto", "x-hide"],
+};
+
+const Gap = {
+  name: "Gap",
+  class: "gap-css",
+  key: `gap`,
+  values: ["def", "0", "x-0", "y-0", "lg", "xl", "x-xl", "y-xl"],
 };
 
 const Flex = {
@@ -120,28 +127,36 @@ export default function GridOptions({
       </div>
       <div className="grid-2cols">
         <RadioSet
-          options={Gap}
-          uid={uid}
-          onChange={onChange}
-          resetNotification={resetNotification}
-        />
-        <RadioSet
           options={Height}
           uid={uid}
           onChange={onChange}
           resetNotification={resetNotification}
         />
+
+        <RadioSet
+          options={Overflow}
+          uid={uid}
+          onChange={onChange}
+          resetNotification={resetNotification}
+        />
       </div>
-      {shape.includes("flex") && (
-        <div className="grid-2cols">
+      <div className="grid-2cols">
+        <RadioSet
+          options={Gap}
+          uid={uid}
+          onChange={onChange}
+          resetNotification={resetNotification}
+        />
+
+        {shape.includes("flex") && (
           <RadioSet
             options={Flex}
             uid={uid}
             onChange={onChange}
             resetNotification={resetNotification}
           />
-        </div>
-      )}
+        )}
+      </div>
 
       {showSelectedOptions && (
         <>
