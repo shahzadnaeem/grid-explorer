@@ -82,7 +82,7 @@ export default function Grid({ shape, boxes, xtraBoxes, showSelectedOptions }) {
         <>
           <div className="grid-controls grid-cols just-left mb4">
             <div className="grid-cols">
-              <button onClick={handleReset}>Reset</button>
+              <button onClick={handleReset}>Reset Options</button>
             </div>
             <div className="grid-cols">
               Boxes
