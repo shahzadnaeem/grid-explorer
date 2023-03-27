@@ -1,6 +1,11 @@
 import { useEffect, useState } from "react";
 
-export default function RadioSet({ options, uid, onChange }) {
+export default function RadioSet({
+  options,
+  uid,
+  onChange,
+  resetNotification,
+}) {
   const [selected, setSelected] = useState(options.values[0]);
 
   const INVISIBLE = "-";
@@ -12,6 +17,10 @@ export default function RadioSet({ options, uid, onChange }) {
   useEffect(() => {
     onChange(options.key, selected);
   }, [selected, options.key, onChange]);
+
+  useEffect(() => {
+    setSelected(options.values[0]);
+  }, [resetNotification, options.values]);
 
   return (
     <fieldset className={"grid-fieldset-c " + options.class}>

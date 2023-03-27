@@ -8,10 +8,22 @@ import "./Grid.css";
 
 const toAry = (n) => (n ? Array(n).fill(0) : []);
 
+const useNotify = () => {
+  const [notification, setNotification] = useState({});
+
+  const notify = () => {
+    setNotification({});
+  };
+
+  return [notification, notify];
+};
+
 export default function Grid({ shape, boxes, xtraBoxes, showSelectedOptions }) {
   const [options, setOptions] = useState({});
   const [numBoxes, setNumBoxes] = useState(0);
   const [numXtraBoxes, setNumXtraBoxes] = useState(0);
+
+  const [notification, notify] = useNotify();
 
   useEffect(() => {
     setNumBoxes(boxes);
@@ -26,6 +38,10 @@ export default function Grid({ shape, boxes, xtraBoxes, showSelectedOptions }) {
       return { ...opts };
     });
   }, []);
+
+  const handleReset = () => {
+    notify();
+  };
 
   const handleBoxUpdate = (setter, delta) => {
     setter((p) => {
@@ -57,6 +73,7 @@ export default function Grid({ shape, boxes, xtraBoxes, showSelectedOptions }) {
         selectedOptions={selectedOptions}
         showSelectedOptions={true}
         onChange={onChange}
+        resetNotification={notification}
       />
 
       {showHelp ? (
@@ -65,7 +82,10 @@ export default function Grid({ shape, boxes, xtraBoxes, showSelectedOptions }) {
         <>
           <div className="grid-controls grid-cols just-left mb4">
             <div className="grid-cols">
-              Box
+              <button onClick={handleReset}>Reset</button>
+            </div>
+            <div className="grid-cols">
+              Boxes
               <button onClick={() => handleBoxUpdate(setNumBoxes, 1)}>+</button>
               <button onClick={() => handleBoxUpdate(setNumBoxes, -1)}>
                 -
@@ -73,7 +93,7 @@ export default function Grid({ shape, boxes, xtraBoxes, showSelectedOptions }) {
             </div>
 
             <div className="grid-cols">
-              Xtra Box
+              Xtra Boxes
               <button onClick={() => handleBoxUpdate(setNumXtraBoxes, 1)}>
                 +
               </button>

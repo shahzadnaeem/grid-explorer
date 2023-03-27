@@ -1,4 +1,4 @@
-import { useId } from "react";
+import { useEffect, useId } from "react";
 
 import RadioSet from "../Fieldset/RadioSet";
 
@@ -70,6 +70,7 @@ export default function GridOptions({
   selectedOptions,
   showSelectedOptions,
   onChange,
+  resetNotification,
 }) {
   const uid = useId();
 
@@ -77,23 +78,68 @@ export default function GridOptions({
     <div className="grid-1col mb4">
       <div className="grid-2cols">
         <div>
-          <RadioSet options={JustifyContent} uid={uid} onChange={onChange} />
-          <RadioSet options={AlignContent} uid={uid} onChange={onChange} />
-          <RadioSet options={PlaceContent} uid={uid} onChange={onChange} />
+          <RadioSet
+            options={JustifyContent}
+            uid={uid}
+            onChange={onChange}
+            resetNotification={resetNotification}
+          />
+          <RadioSet
+            options={AlignContent}
+            uid={uid}
+            onChange={onChange}
+            resetNotification={resetNotification}
+          />
+          <RadioSet
+            options={PlaceContent}
+            uid={uid}
+            onChange={onChange}
+            resetNotification={resetNotification}
+          />
         </div>
         <div>
-          <RadioSet options={JustifyItems} uid={uid} onChange={onChange} />
-          <RadioSet options={AlignItems} uid={uid} onChange={onChange} />
-          <RadioSet options={PlaceItems} uid={uid} onChange={onChange} />
+          <RadioSet
+            options={JustifyItems}
+            uid={uid}
+            onChange={onChange}
+            resetNotification={resetNotification}
+          />
+          <RadioSet
+            options={AlignItems}
+            uid={uid}
+            onChange={onChange}
+            resetNotification={resetNotification}
+          />
+          <RadioSet
+            options={PlaceItems}
+            uid={uid}
+            onChange={onChange}
+            resetNotification={resetNotification}
+          />
         </div>
       </div>
       <div className="grid-2cols">
-        <RadioSet options={Gap} uid={uid} onChange={onChange} />
-        <RadioSet options={Height} uid={uid} onChange={onChange} />
+        <RadioSet
+          options={Gap}
+          uid={uid}
+          onChange={onChange}
+          resetNotification={resetNotification}
+        />
+        <RadioSet
+          options={Height}
+          uid={uid}
+          onChange={onChange}
+          resetNotification={resetNotification}
+        />
       </div>
       {shape.includes("flex") && (
         <div className="grid-2cols">
-          <RadioSet options={Flex} uid={uid} onChange={onChange} />
+          <RadioSet
+            options={Flex}
+            uid={uid}
+            onChange={onChange}
+            resetNotification={resetNotification}
+          />
         </div>
       )}
 
