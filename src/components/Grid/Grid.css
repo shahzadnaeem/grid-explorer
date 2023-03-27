@@ -14,9 +14,6 @@
     --bg-selected-options: rgb(75, 73, 60);
     --bg-details: rgb(187, 177, 111);
     --fg-details: #00031c;
-    --bg-child: #304f5f;
-    --bg-child-xtra: rgb(120, 52, 52);
-    --bg-child-jaunty: greenyellow;
 }
 
 .Grid {
@@ -429,35 +426,6 @@ div.grid-fieldset-item>label {
 
 .ov-x-hide {
     overflow-x: hidden;
-}
-
-/* ----------------------------------------- */
-
-.box {
-    background-color: var(--bg-child);
-    border: 1px solid var(--bd);
-}
-
-.xtra {
-    background-color: var(--bg-child-xtra);
-}
-
-.jaunty {
-    --fg: black;
-    --bd: var(--fg);
-    --mg: 2rem;
-    --ht: 5rem;
-    --wd: 5rem;
-}
-
-.jaunty {
-    background-color: var(--bg-child-jaunty);
-    color: var(--fg);
-    border: 4px solid var(--bd);
-    margin: var(--mg);
-    height: var(--ht);
-    width: var(--wd);
-    transform: rotate(30deg);
 }
 
 /* ----------------------------------------- */

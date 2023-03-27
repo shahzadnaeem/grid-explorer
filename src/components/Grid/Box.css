@@ -1,0 +1,33 @@
+.box {
+    --bg-std: #304f5f;
+    --bg-xtra: rgb(120, 52, 52);
+}
+
+.box {
+    background-color: var(--bg-std);
+    border: 1px solid var(--bd);
+}
+
+.xtra {
+    background-color: var(--bg-xtra);
+}
+
+.jaunty {
+    --bg: orangered;
+    --fg: black;
+    --bd: var(--fg);
+    --bd-wd: 4px;
+    --mg: 2rem;
+    --ht: 5rem;
+    --wd: 5rem;
+}
+
+.jaunty {
+    background-color: var(--bg);
+    color: var(--fg);
+    border: var(--bd-wd) solid var(--bd);
+    margin: var(--mg);
+    height: var(--ht);
+    width: var(--wd);
+    transform: rotate(30deg);
+}

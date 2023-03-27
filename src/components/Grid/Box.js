@@ -1,3 +1,5 @@
+import "./Box.css";
+
 export default function Box({ xtra, jaunty, children }) {
   return (
     <div
