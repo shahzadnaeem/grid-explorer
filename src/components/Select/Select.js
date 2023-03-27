@@ -13,15 +13,16 @@ export default function Select({ options, onChange }) {
 
   return (
     <div>
-      <select name={options.title} id={options.title} onChange={handleChange}>
+      <select
+        name={options.title}
+        id={options.title}
+        value={selected ? selected.name : ""}
+        onChange={handleChange}
+      >
         <option value="">{`${options.title}...`}</option>
         {options.options.map((o, i) => {
           return (
-            <option
-              key={o.name}
-              value={o.name}
-              selected={selected && selected.name === o.name}
-            >
+            <option key={o.name} value={o.name}>
               {o.name}
             </option>
           );
