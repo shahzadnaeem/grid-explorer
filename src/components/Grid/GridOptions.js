@@ -69,7 +69,7 @@ const Flex = {
   name: "Flex",
   class: "flex-css",
   key: `flx`,
-  values: ["def", "wrap"],
+  values: ["def", "wrap", "wrap-rev"],
 };
 
 const FLEX_SHAPE_PREFIX = "flex";

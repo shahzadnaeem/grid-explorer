@@ -401,6 +401,10 @@ div.grid-fieldset-item>label {
     flex-wrap: wrap;
 }
 
+.flx-wrap-rev {
+    flex-wrap: wrap-reverse;
+}
+
 /* ----------------------------------------- */
 
 .ov-auto {
