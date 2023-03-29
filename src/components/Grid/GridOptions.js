@@ -6,42 +6,42 @@ const JustifyContent = {
   name: "Justify Content",
   class: "content-css",
   key: `jc`,
-  values: ["def", "beg", "cen", "end", "spc-ar", "spc-bt", "spc-ev"],
+  values: ["def", "start", "cen", "end", "spc-ar", "spc-bt", "spc-ev"],
 };
 
 const AlignContent = {
   name: "Align Content",
   class: "content-css",
   key: `ac`,
-  values: ["def", "beg", "cen", "end", "spc-ar", "spc-bt", "spc-ev", "str"],
+  values: ["def", "start", "cen", "end", "spc-ar", "spc-bt", "spc-ev", "str"],
 };
 
 const PlaceContent = {
   name: "Place Content (Justify + Align)",
   class: "content-css",
   key: `pc`,
-  values: ["def", "beg", "cen", "end"],
+  values: ["def", "start", "cen", "end"],
 };
 
 const JustifyItems = {
   name: "Justify Items",
   class: "items-css",
   key: `ji`,
-  values: ["def", "beg", "cen", "end", "left", "right"],
+  values: ["def", "start", "cen", "end", "left", "right"],
 };
 
 const AlignItems = {
   name: "Align Items",
   class: "items-css",
   key: `ai`,
-  values: ["def", "beg", "cen", "end", "str"],
+  values: ["def", "start", "cen", "end", "str"],
 };
 
 const PlaceItems = {
   name: "Place Items (Justify + Align)",
   class: "items-css",
   key: `pi`,
-  values: ["def", "beg", "cen", "end"],
+  values: ["def", "start", "cen", "end"],
 };
 
 const Height = {

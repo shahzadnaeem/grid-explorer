@@ -202,6 +202,8 @@ div.grid-fieldset-item>label {
     gap: var(--grid-gap);
     justify-content: left;
     padding: 0.5rem;
+    font-size: 1.2rem;
+    font-weight: 600;
 }
 
 .details {
@@ -213,7 +215,7 @@ div.grid-fieldset-item>label {
 
 /* ----------------------------------------- */
 
-.jc-beg {
+.jc-start {
     justify-content: start;
 }
 
@@ -239,7 +241,7 @@ div.grid-fieldset-item>label {
 
 /*  */
 
-.ji-beg {
+.ji-start {
     justify-items: start;
 }
 
@@ -261,7 +263,7 @@ div.grid-fieldset-item>label {
 
 /* ----------------------------------------- */
 
-.ac-beg {
+.ac-start {
     align-content: start;
 }
 
@@ -291,7 +293,7 @@ div.grid-fieldset-item>label {
 
 /*  */
 
-.ai-beg {
+.ai-start {
     align-items: start;
 }
 
@@ -309,7 +311,7 @@ div.grid-fieldset-item>label {
 
 /* ----------------------------------------- */
 
-.pc-beg {
+.pc-start {
     place-content: start;
 }
 
@@ -323,7 +325,7 @@ div.grid-fieldset-item>label {
 
 /*  */
 
-.pi-beg {
+.pi-start {
     place-items: start;
 }
 

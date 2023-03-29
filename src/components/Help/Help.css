@@ -4,6 +4,7 @@
     --bd: var(--fg);
     --fg-link: lightblue;
     --fg-link-hover: lightgreen;
+    --fg-css: lightgreen;
 }
 
 .Help {
@@ -11,7 +12,7 @@
     background-color: var(--bg);
     border: 1px solid var(--bd);
     padding: 0.5rem;
-    font-size: large;
+    font-size: larger;
 }
 
 .Help ul {
@@ -37,4 +38,12 @@
 .Help a:hover {
     border-bottom: 2px solid;
     cursor: pointer;
+}
+
+.Help pre {
+    padding-left: 2.0rem;
+}
+
+.Help pre>span {
+    color: var(--fg-css);
 }

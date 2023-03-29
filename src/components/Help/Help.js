@@ -28,14 +28,18 @@ export default function Help() {
           <li>Boxes, Xtra Boxes or Jaunty Boxes can be added or removed</li>
         </ul>
         <hr />
-        <li>You can also add your own Layouts and Options</li>
+        <li>To add your own Layouts and Options...</li>
         <p>
           <span>src/App.js</span> is where the Layouts are defined
         </p>
         <p>
           <span>src/components/Grid/Grid.css</span> is where the CSS for Options
-          are defined - the <i>Selected options: </i> list
+          are defined
         </p>
+        <pre>
+          {"eg "}
+          <span>.jc-start &#123; justify-content: start; &#125;</span>
+        </pre>
       </ul>
     </div>
   );
