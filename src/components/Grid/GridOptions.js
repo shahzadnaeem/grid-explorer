@@ -48,7 +48,7 @@ const Height = {
   name: "Height (Container)",
   class: "height-css",
   key: `ht`,
-  values: ["def", "sm", "md", "lg", "xl", "min-xl"],
+  values: ["def", "sm", "min-sm", "lg", "xl", "min-xl"],
 };
 
 const Overflow = {

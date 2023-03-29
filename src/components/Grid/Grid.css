@@ -379,8 +379,8 @@ div.grid-fieldset-item>label {
     height: 12rem;
 }
 
-.ht-md {
-    height: 16rem;
+.ht-min-sm {
+    min-height: 12rem;
 }
 
 .ht-lg {

@@ -2,6 +2,8 @@
     --bg: #1d1d1d;
     --fg: rgb(222, 222, 222);
     --bd: var(--fg);
+    --fg-link: lightblue;
+    --fg-link-hover: lightgreen;
 }
 
 .Help {
@@ -25,4 +27,14 @@
 
 .Help hr {
     margin-block: 0.5rem;
+}
+
+.Help a {
+    color: var(--fg-link);
+    text-decoration: none;
+}
+
+.Help a:hover {
+    border-bottom: 2px solid;
+    cursor: pointer;
 }

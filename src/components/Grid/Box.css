@@ -27,7 +27,7 @@
     color: var(--fg);
     border: var(--bd-wd) solid var(--bd);
     margin: var(--mg);
-    height: var(--ht);
-    width: var(--wd);
+    min-height: var(--ht);
+    min-width: var(--wd);
     transform: rotate(30deg);
 }

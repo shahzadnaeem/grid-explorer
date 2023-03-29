@@ -145,7 +145,9 @@ export default function Grid({ shape, boxes, xtraBoxes, showSelectedOptions }) {
             ))}
 
             {toAry(numJauntyBoxes).map((_, i) => (
-              <Box key={i + 1} jaunty={true}>{`Jaunty Box ${i + 1}`}</Box>
+              <Box key={i + 1} jaunty={true}>
+                {`Jaunty ${i + 1}`}
+              </Box>
             ))}
           </div>
         </>
