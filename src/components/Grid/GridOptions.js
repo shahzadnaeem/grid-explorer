@@ -65,6 +65,13 @@ const Gap = {
   values: ["def", "0", "x-0", "y-0", "lg", "xl", "x-xl", "y-xl"],
 };
 
+const BoxSize = {
+  name: "Box Size",
+  class: "box-size-css",
+  key: `box-size`,
+  values: ["def", "md", "md-ov", "lg", "lg-ov", "min-lg", "xl"],
+};
+
 const Flex = {
   name: "Flex",
   class: "flex-css",
@@ -139,7 +146,7 @@ export default function GridOptions({
       </div>
       <div className="grid-2cols">
         <RadioSet
-          options={Height}
+          options={Gap}
           uid={uid}
           onChange={onChange}
           resetNotification={resetNotification}
@@ -154,12 +161,21 @@ export default function GridOptions({
       </div>
       <div className="grid-2cols">
         <RadioSet
-          options={Gap}
+          options={Height}
           uid={uid}
           onChange={onChange}
           resetNotification={resetNotification}
         />
 
+        <RadioSet
+          options={BoxSize}
+          uid={uid}
+          onChange={onChange}
+          resetNotification={resetNotification}
+        />
+      </div>
+
+      <div className="grid-2cols">
         {isFlexShape(shape) && (
           <RadioSet
             options={Flex}

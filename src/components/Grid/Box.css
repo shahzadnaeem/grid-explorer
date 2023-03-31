@@ -27,7 +27,9 @@
     color: var(--fg);
     border: var(--bd-wd) solid var(--bd);
     margin: var(--mg);
-    min-height: var(--ht);
-    min-width: var(--wd);
+    /* min-height: var(--ht);
+    min-width: var(--wd); */
     transform: rotate(30deg);
+    max-height: 8rem;
+    max-width: 8rem;
 }

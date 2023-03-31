@@ -47,8 +47,8 @@ export default function Grid({ shape, boxes, xtraBoxes, showSelectedOptions }) {
   const [notification, notify] = useNotify();
 
   useEffect(() => {
-    setNumBoxes(boxes);
-    setNumXtraBoxes(xtraBoxes);
+    setNumBoxes(boxes || 0);
+    setNumXtraBoxes(xtraBoxes || 0);
     setNumJauntyBoxes(0);
   }, [shape, boxes, xtraBoxes, notification]);
 
