@@ -12,6 +12,7 @@
     --bg-box-size-css: var(--bg-grid-bounds);
     --bg-height-css: var(--bg-grid-bounds);
     --bg-flex-css: rgb(43, 100, 122);
+    --bg-theme-css: var(--bg-grid-bounds);
     --bg-selected-options: rgb(75, 73, 60);
     --bg-details: rgb(187, 177, 111);
     --fg-details: #00031c;
@@ -196,6 +197,10 @@ div.grid-fieldset-item>label {
 
 .flex-css {
     background-color: var(--bg-flex-css);
+}
+
+.theme-css {
+    background-color: var(--bg-theme-css);
 }
 
 .selected-options {
@@ -471,6 +476,56 @@ div.grid-fieldset-item>label {
 .box-size-xl .box {
     width: 10rem;
     height: 10rem;
+}
+
+/* ----------------------------------------- */
+
+/* TODO: Re-organise this. Top level and to avoid having to redefe attributes. */
+
+.theme-1 {
+    --bg-grid-bounds: rgb(33, 42, 66);
+}
+
+.theme-1 .box {
+    --fg: rgb(250, 218, 218);
+    --bd: rgb(248, 247, 168);
+    --bg-std: #47305f;
+    --bg-xtra: rgb(86, 120, 52);
+    --bg-jaunty: rgb(255, 242, 0);
+    --fg-jaunty: rgb(219, 0, 0);
+}
+
+.theme-1 .box {
+    color: var(--fg);
+}
+
+.theme-1 .jaunty {
+    --rot: -45deg;
+    color: var(--fg-jaunty);
+}
+
+.theme-2 {
+    --bg-grid-bounds: rgb(41, 41, 41);
+}
+
+.theme-2 .box {
+    --fg: rgb(242, 242, 242);
+    --bd: rgb(220, 220, 220);
+    --bg-std: #5c5c5c;
+    --bg-xtra: rgb(80, 80, 80);
+    --bg-jaunty: rgb(28, 0, 0);
+    --fg-jaunty: rgb(191, 191, 191);
+}
+
+.theme-2 .box {
+    color: var(--fg);
+}
+
+.theme-2 .jaunty {
+    --rot: 135deg;
+    color: var(--fg-jaunty);
+    font-weight: 900;
+    transition: all 0.5s;
 }
 
 /* ----------------------------------------- */

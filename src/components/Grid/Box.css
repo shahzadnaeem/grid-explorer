@@ -1,6 +1,8 @@
 .box {
     --bg-std: #304f5f;
     --bg-xtra: rgb(120, 52, 52);
+    --bg-jaunty: orangered;
+    --fg-jaunty: black;
 }
 
 .box {
@@ -13,23 +15,21 @@
 }
 
 .jaunty {
-    --bg: orangered;
-    --fg: black;
     --bd: var(--fg);
-    --bd-wd: 4px;
-    --mg: 2rem;
+    --bd-wd: 2px;
+    --mg: 2.0rem;
     --ht: 5rem;
     --wd: 5rem;
+    --rot: 15deg;
 }
 
 .jaunty {
-    background-color: var(--bg);
-    color: var(--fg);
+    background-color: var(--bg-jaunty);
+    color: var(--fg-jaunty);
     border: var(--bd-wd) solid var(--bd);
     margin: var(--mg);
-    /* min-height: var(--ht);
-    min-width: var(--wd); */
-    transform: rotate(30deg);
-    max-height: 8rem;
-    max-width: 8rem;
+    transform: rotate(var(--rot));
+    transition: all 1s;
+    max-height: var(--ht);
+    max-width: var(--wd);
 }

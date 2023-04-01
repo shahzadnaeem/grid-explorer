@@ -79,6 +79,13 @@ const Flex = {
   values: ["def", "wrap", "wrap-rev"],
 };
 
+const Theme = {
+  name: "Theme (Quick!)",
+  class: "theme-css",
+  key: `theme`,
+  values: ["def", "1", "2"],
+};
+
 const FLEX_SHAPE_PREFIX = "flex";
 
 const isFlexShape = (shape) => {
@@ -160,30 +167,37 @@ export default function GridOptions({
         />
       </div>
       <div className="grid-2cols">
-        <RadioSet
-          options={Height}
-          uid={uid}
-          onChange={onChange}
-          resetNotification={resetNotification}
-        />
-
-        <RadioSet
-          options={BoxSize}
-          uid={uid}
-          onChange={onChange}
-          resetNotification={resetNotification}
-        />
-      </div>
-
-      <div className="grid-2cols">
-        {isFlexShape(shape) && (
+        <div>
           <RadioSet
-            options={Flex}
+            options={Height}
             uid={uid}
             onChange={onChange}
             resetNotification={resetNotification}
           />
-        )}
+          <RadioSet
+            options={Theme}
+            uid={uid}
+            onChange={onChange}
+            resetNotification={resetNotification}
+          />
+        </div>
+        <div>
+          <RadioSet
+            options={BoxSize}
+            uid={uid}
+            onChange={onChange}
+            resetNotification={resetNotification}
+          />
+
+          {isFlexShape(shape) && (
+            <RadioSet
+              options={Flex}
+              uid={uid}
+              onChange={onChange}
+              resetNotification={resetNotification}
+            />
+          )}
+        </div>
       </div>
 
       {showSelectedOptions && (
